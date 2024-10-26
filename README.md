@@ -41,7 +41,10 @@ git clone https://github.com/marksowell/nmap-tailwind-xsl.git
 > 4. Extract and Append <host> Elements
 >    ```bash
 >    for file in *.xml; do
+>    # Skip the combined output file
+>    if [ "$file" != "combined_nmap_output.xml" ]; then
 >        xmlstarlet sel -t -c "/nmaprun/host" "$file" >> combined_nmap_output.xml
+>    fi
 >    done
 >    ```
 > 5. Close the Root <nmaprun> Tag
