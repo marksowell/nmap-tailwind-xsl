@@ -8,6 +8,7 @@
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" type="text/css"/>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.tailwind.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css"/>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.24/js/dataTables.tailwind.min.js"></script>
@@ -33,7 +34,7 @@
               <div class="flex items-center space-x-6 ml-auto">
                 <a href="#hosts" class="text-lg hover:text-gray-300">Hosts</a>
                 <a href="#services" class="text-lg hover:text-gray-300">Services</a>
-                <button id="darkModeToggle" class="ml-4 bg-gray-700 text-white px-2 py-1 rounded">Dark Mode</button>
+                <button id="darkModeToggle" class="ml-4 bg-gray-700 w-10 h-10 rounded-full flex items-center justify-center"><i id="darkModeIcon" class="fas fa-moon"></i></button>
               </div>
           </div>
         </nav>
@@ -101,8 +102,16 @@
         </script>
         <script>
           document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("darkModeToggle").addEventListener("click", function() {
+            const toggleButton = document.getElementById("darkModeToggle");
+            const icon = document.getElementById("darkModeIcon");
+        
+            toggleButton.addEventListener("click", function() {
               document.body.classList.toggle("dark-mode");
+              if (document.body.classList.contains("dark-mode")) {
+                icon.classList.replace("fa-moon", "fa-sun"); // Change to sun icon
+              } else {
+                icon.classList.replace("fa-sun", "fa-moon"); // Change back to moon icon
+              }
             });
           });
         </script>
