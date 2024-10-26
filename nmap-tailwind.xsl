@@ -19,8 +19,12 @@
             background-color: #111;
           }
           body.dark-mode nav {
-              filter: invert(1);
+              filter: invert(1) hue-rotate(180deg);
               background-color: #000;
+              box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05) !important;
+          }
+          body nav {
+              box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
           }
           body.dark-mode #darkModeToggle {
             background-color: #111;
@@ -28,9 +32,9 @@
         </style>
       </head>
       <body class="bg-gray-100 text-gray-800 pt-16">
-        <nav class="bg-gray-800 text-white fixed w-full top-0 z-10">
-          <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-              <span class="text-2xl font-bold">Scan Report</span>
+        <nav class="bg-gray-800 text-white fixed w-full top-0 z-10 box-shadow">
+          <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+              <span class="text-3xl font-semibold">Scan Report</span>
               <div class="flex items-center space-x-6 ml-auto">
                 <a href="#hosts" class="text-lg hover:text-gray-300">Hosts</a>
                 <a href="#services" class="text-lg hover:text-gray-300">Services</a>
