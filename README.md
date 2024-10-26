@@ -10,7 +10,7 @@ An XSL stylesheet for rendering Nmap XML output with a modernized UI using Tailw
 - **Interactive Data**: Includes DataTables for easy sorting and pagination of Nmap scan results.
 - **Online Hosts**: Only displays hosts with open ports for a focused scan summary.
 - **Clear Section Navigation**: Accessible navigation links for "Online Hosts" and "Open Services".
-- **Light, Dark, and System Themes**: Toggle between light, dark, and system color schemes for a comfortable viewing experience.
+- **Dark Mode**: Toggle between light and dark mode comfortable viewing experience.
 
 ## Installation
 Clone the Repository
