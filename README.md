@@ -1,5 +1,5 @@
 # nmap-tailwind-xsl
-An XSL stylesheet for rendering Nmap XML output with a modernized UI using Tailwind CSS and DataTables
+An XSL stylesheet for rendering Nmap XML output with a modernized UI using Tailwind CSS and DataTables.
 
 ## Overview
 
@@ -8,8 +8,8 @@ An XSL stylesheet for rendering Nmap XML output with a modernized UI using Tailw
 ### Features
 - **Modern UI**: Styled with Tailwind CSS for a cleaner and more responsive layout.
 - **Interactive Data**: Includes DataTables for easy sorting and pagination of Nmap scan results.
-- **Online Hosts**: Only displays hosts with open ports for a focused scan summary.
-- **Clear Section Navigation**: Accessible navigation links for "Online Hosts" and "Open Services".
+- **Scan Report**: Only displays hosts with open ports for a focused scan summary.
+- **Clear Section Navigation**: Accessible navigation links for "Hosts" and "Services".
 - **Dark Mode**: Toggle between light and dark mode comfortable viewing experience.
 
 ## Installation
