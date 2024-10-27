@@ -5,14 +5,12 @@
     <html lang="en">
       <head>
         <meta name="referrer" content="no-referrer"/> 
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" type="text/css"/>
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.tailwind.css" type="text/css"/>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.11/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.11/css/jquery.dataTables.min.css" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css"/>
         <link rel="icon" href="data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='13.9' fill='%231f2937' stroke='%23231f20' stroke-miterlimit='10' stroke-width='.1'/%3E%3Cpath fill='%23231f20' d='m20.5 17.5-13-.1'/%3E%3Cpath fill='none' stroke='%23fff' stroke-miterlimit='10' stroke-width='1.8' d='M20.5 17.5h-8.6'/%3E%3Cpath fill='%23fff' d='m12.8 14.4-5.3 3 5.3 3.1v-6.1z'/%3E%3Cpath fill='%23231f20' d='M7.5 10.5h13'/%3E%3Cpath fill='none' stroke='%23fff' stroke-miterlimit='10' stroke-width='1.8' d='M7.5 10.5h8.6'/%3E%3Cpath fill='%23fff' d='m15.2 13.6 5.3-3.1-5.3-3.1v6.2z'/%3E%3C/svg%3E" type="image/svg+xml"/>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.24/js/dataTables.tailwind.min.js"></script>
         <title>Scan Report<xsl:value-of select="/nmaprun/@version"/></title>
         <style>
           body.dark-mode {
