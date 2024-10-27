@@ -9,10 +9,11 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" type="text/css"/>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.tailwind.css" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css"/>
+        <link rel="icon" href="data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='13.9' fill='%231f2937' stroke='%23231f20' stroke-miterlimit='10' stroke-width='.1'/%3E%3Cpath fill='%23231f20' d='m20.5 17.5-13-.1'/%3E%3Cpath fill='none' stroke='%23fff' stroke-miterlimit='10' stroke-width='1.8' d='M20.5 17.5h-8.6'/%3E%3Cpath fill='%23fff' d='m12.8 14.4-5.3 3 5.3 3.1v-6.1z'/%3E%3Cpath fill='%23231f20' d='M7.5 10.5h13'/%3E%3Cpath fill='none' stroke='%23fff' stroke-miterlimit='10' stroke-width='1.8' d='M7.5 10.5h8.6'/%3E%3Cpath fill='%23fff' d='m15.2 13.6 5.3-3.1-5.3-3.1v6.2z'/%3E%3C/svg%3E" type="image/svg+xml"/>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.24/js/dataTables.tailwind.min.js"></script>
-        <title>Scan Report Nmap <xsl:value-of select="/nmaprun/@version"/></title>
+        <title>Scan Report<xsl:value-of select="/nmaprun/@version"/></title>
         <style>
           body.dark-mode {
             filter: invert(1) hue-rotate(180deg);
@@ -29,7 +30,7 @@
       </head>
       <body class="bg-gray-100 text-gray-800">
         <nav class="bg-gray-800 text-white fixed w-full top-0 z-10 shadow-sm">
-          <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+          <div class="container max-w-full px-10 py-3 flex justify-between items-center">
               <span class="text-3xl font-semibold">Scan Report</span>
               <div class="flex items-center space-x-6 ml-auto">
                 <a href="#hosts" class="text-lg hover:text-gray-300">Hosts</a>
@@ -38,7 +39,7 @@
               </div>
           </div>
         </nav>
-        <div class="container mx-auto px-4">
+        <div class="container max-w-full px-10">
           <h2 id="hosts" class="text-2xl font-semibold mb-2 text-gray-800 pt-20">Hosts</h2>
           <div id="shadow" class="max-w-full overflow-x-auto mb-6 rounded-md shadow-sm bg-white">
             <table id="table-overview" class="display w-full pt-2">
