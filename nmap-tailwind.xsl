@@ -27,7 +27,7 @@
           }
         </style>
       </head>
-      <body class="bg-gray-100 text-gray-800 pt-16">
+      <body class="bg-gray-100 text-gray-800">
         <nav class="bg-gray-800 text-white fixed w-full top-0 z-10 shadow-sm">
           <div class="container mx-auto px-4 py-3 flex justify-between items-center">
               <span class="text-3xl font-semibold">Scan Report</span>
@@ -39,7 +39,7 @@
           </div>
         </nav>
         <div class="container mx-auto px-4">
-          <h2 id="hosts" class="text-2xl font-semibold mb-2 mt-4 text-gray-800">Hosts</h2>
+          <h2 id="hosts" class="anchor-offset text-2xl font-semibold mb-2 text-gray-800 pt-20">Hosts</h2>
           <div id="shadow" class="max-w-full overflow-x-auto mb-6 rounded-md shadow-sm bg-white">
             <table id="table-overview" class="display w-full pt-2">
               <thead>
@@ -96,7 +96,8 @@
                 $(".dataTables_filter").addClass("p-4");
                 $(".dataTables_info").addClass("p-4");
                 $(".dataTables_paginate.paging_simple_numbers").addClass("pr-4");
-              }
+              },
+              "lengthMenu": [ [10, 25, 50, 100, 1000, -1], [10, 25, 50, 100, 1000, "All"] ] 
             });
           });
         </script>
