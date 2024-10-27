@@ -39,7 +39,7 @@
           </div>
         </nav>
         <div class="container mx-auto px-4">
-          <h2 id="hosts" class="anchor-offset text-2xl font-semibold mb-2 text-gray-800 pt-20">Hosts</h2>
+          <h2 id="hosts" class="text-2xl font-semibold mb-2 text-gray-800 pt-20">Hosts</h2>
           <div id="shadow" class="max-w-full overflow-x-auto mb-6 rounded-md shadow-sm bg-white">
             <table id="table-overview" class="display w-full pt-2">
               <thead>
