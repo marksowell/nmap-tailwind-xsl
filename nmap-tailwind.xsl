@@ -25,13 +25,10 @@
           body.dark-mode #darkModeToggle {
             background-color: #111;
           }
-          body.dark-mode .shadow-lg {
-            box-shadow: none !important;
-          }
         </style>
       </head>
       <body class="bg-gray-100 text-gray-800 pt-16">
-        <nav class="bg-gray-800 text-white fixed w-full top-0 z-10 shadow-lg">
+        <nav class="bg-gray-800 text-white fixed w-full top-0 z-10 shadow-sm">
           <div class="container mx-auto px-4 py-3 flex justify-between items-center">
               <span class="text-3xl font-semibold">Scan Report</span>
               <div class="flex items-center space-x-6 ml-auto">
@@ -43,7 +40,7 @@
         </nav>
         <div class="container mx-auto px-4">
           <h2 id="hosts" class="text-2xl font-semibold mb-2 mt-4 text-gray-800">Hosts</h2>
-          <div class="max-w-full overflow-x-auto mb-6 rounded-lg shadow-lg bg-white">
+          <div id="shadow" class="max-w-full overflow-x-auto mb-6 rounded-md shadow-sm bg-white">
             <table id="table-overview" class="display w-full pt-2">
               <thead>
                 <tr>
@@ -66,7 +63,7 @@
             </table>
           </div>
           <h2 id="services" class="text-2xl font-semibold mb-2 mt-4 text-gray-800">Services</h2>
-          <div class="max-w-full overflow-x-auto mb-6 rounded-lg shadow-lg bg-white">
+          <div class="max-w-full overflow-x-auto mb-6 rounded-md shadow-sm bg-white">
             <table id="table-services" class="display w-full pt-2">
               <thead>
                 <tr>
@@ -112,8 +109,12 @@
               document.body.classList.toggle("dark-mode");
               if (document.body.classList.contains("dark-mode")) {
                 icon.classList.replace("fa-moon", "fa-sun"); // Change to sun icon
+                const shadows = Array.from(document.getElementsByClassName("shadow-sm"));
+                shadows.forEach(element => element.classList.replace("shadow-sm", "shadow-none"));
               } else {
                 icon.classList.replace("fa-sun", "fa-moon"); // Change back to moon icon
+                const noShadows = Array.from(document.getElementsByClassName("shadow-none"));
+                noShadows.forEach(element => element.classList.replace("shadow-none", "shadow-sm"));
               }
             });
           });
