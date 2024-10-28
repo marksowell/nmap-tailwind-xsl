@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+nmap-tailwind.xsl
+https://github.com/marksowell/nmap-tailwind-xsl
+Licensed under Creative Commons BY-SA 4.0 License
+-->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:output method="html" encoding="utf-8" indent="yes" doctype-system="about:legacy-compat"/>
   <xsl:template match="/">
     <html lang="en">
       <head>
+        <xsl:comment>&#10;Generated with nmap-tailwind.xsl&#10;https://github.com/marksowell/nmap-tailwind-xsl&#10;Licensed under Creative Commons BY-SA&#10;</xsl:comment><xsl:text>&#10;</xsl:text>
         <meta name="referrer" content="no-referrer"/> 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
