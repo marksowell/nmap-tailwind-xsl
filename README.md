@@ -12,6 +12,17 @@ An XSL stylesheet for rendering Nmap XML output with a modernized UI using Tailw
 - **Clear Section Navigation**: Accessible navigation links for "Hosts" and "Services".
 - **Dark Mode**: Toggle between light and dark mode comfortable viewing experience.
 
+## Dependencies
+
+This project uses the following versions specified in the XSL file:
+
+| Dependency      | Version                                       |
+|-----------------|-----------------------------------------------|
+| **jQuery**      | v3.7.1 |
+| **DataTables**  | v2.1.8 |
+| **Tailwind CSS**| Latest via Tailwind Play CDN |
+
+
 ## Installation
 Clone the Repository
 ```
