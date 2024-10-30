@@ -42,7 +42,7 @@ Licensed under Creative Commons BY-SA 4.0 License
         </style>
       </head>
       <body class="bg-gray-100 text-gray-800">
-        <nav id="header" class="bg-gray-800 text-white fixed w-full top-0 z-10 shadow-lg">
+        <nav id="header" class="bg-gray-800 text-white fixed w-full top-0 z-10 shadow-sm">
           <div class="container max-w-full px-10 py-3 flex justify-between items-center">
               <span class="text-3xl font-semibold">Scan Report</span>
               <div class="flex items-center space-x-6 ml-auto">
@@ -54,7 +54,7 @@ Licensed under Creative Commons BY-SA 4.0 License
         </nav>
         <div class="container max-w-full px-10">
           <h2 id="hosts" class="text-2xl font-semibold mb-2 text-gray-800 pt-20">Hosts</h2>
-          <div class="max-w-full overflow-x-auto mb-6 rounded-md shadow-lg bg-white">
+          <div class="max-w-full overflow-x-auto mb-6 rounded-md shadow-sm bg-white">
             <table id="table-overview" class="display w-full pt-2">
               <thead>
                 <tr>
@@ -77,7 +77,7 @@ Licensed under Creative Commons BY-SA 4.0 License
             </table>
           </div>
           <h2 id="services" class="text-2xl font-semibold mb-2 mt-4 text-gray-800">Services</h2>
-          <div class="max-w-full overflow-x-auto mb-6 rounded-md shadow-lg bg-white">
+          <div class="max-w-full overflow-x-auto mb-6 rounded-md shadow-sm bg-white">
             <table id="table-services" class="display w-full pt-2">
               <thead>
                 <tr>
@@ -115,7 +115,7 @@ Licensed under Creative Commons BY-SA 4.0 License
             $('#table-overview, #table-services').DataTable({
               "initComplete": function(settings, json) {
                 $(".dt-layout-row:not(.dt-layout-table)").addClass("px-4");
-                $(".dt-container .dt-layout-row").css("display", "flex");
+                $(".dt-container .dt-layout-row:not(.dt-layout-table)").css("display", "flex");
               },
               columnDefs: [
                 { type: "ip-address", targets: 0 }
@@ -133,12 +133,12 @@ Licensed under Creative Commons BY-SA 4.0 License
               document.body.classList.toggle("dark-mode");
               if (document.body.classList.contains("dark-mode")) {
                 icon.classList.replace("fa-moon", "fa-sun"); // Change to sun icon
-                const shadows = Array.from(document.getElementsByClassName("shadow-lg"));
-                shadows.forEach(element => element.classList.replace("shadow-lg", "shadow-none"));
+                const shadows = Array.from(document.getElementsByClassName("shadow-sm"));
+                shadows.forEach(element => element.classList.replace("shadow-sm", "shadow-none"));
               } else {
                 icon.classList.replace("fa-sun", "fa-moon"); // Change back to moon icon
                 const noShadows = Array.from(document.getElementsByClassName("shadow-none"));
-                noShadows.forEach(element => element.classList.replace("shadow-none", "shadow-lg"));
+                noShadows.forEach(element => element.classList.replace("shadow-none", "shadow-sm"));
               }
             });
           });
