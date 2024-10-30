@@ -30,6 +30,12 @@ Licensed under Creative Commons BY-SA 4.0 License
           body.dark-mode #darkModeToggle {
             background-color: #111;
           }
+          body.darkmode table.dataTable.stripe>tbody>tr:nth-child(odd)>*,table.dataTable.display>tbody>tr:nth-child(odd)>* {
+              box-shadow: inset 0 0 0 9999px rgb(228 228 228 / 40%);
+          }
+          body.darkmode table.dataTable.display>tbody>tr:nth-child(odd)>.sorting_1,table.dataTable.order-column.stripe>tbody>tr:nth-child(odd)>.sorting_1 {
+              box-shadow: inset 0 0 0 9999px rgb(228 228 228 / 40%);
+          }
         </style>
       </head>
       <body class="bg-gray-100 text-gray-800">
