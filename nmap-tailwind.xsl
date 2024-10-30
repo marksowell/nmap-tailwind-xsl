@@ -24,11 +24,14 @@ Licensed under Creative Commons BY-SA 4.0 License
             background-color: #111;
           }
           body.dark-mode #header {
-            filter: invert(1);
-            background-color: #000;
+            background-color: #fff;
+            color: #000;
+          }
+          body.dark-mode a:hover {
+            color: #333;
           }
           body.dark-mode #darkModeToggle {
-            background-color: #111;
+            background-color: #eee;
           }
           body.darkmode table.dataTable.stripe>tbody>tr:nth-child(odd)>*,table.dataTable.display>tbody>tr:nth-child(odd)>* {
               box-shadow: inset 0 0 0 9999px rgb(228 228 228 / 40%);
@@ -51,7 +54,7 @@ Licensed under Creative Commons BY-SA 4.0 License
         </nav>
         <div class="container max-w-full px-10">
           <h2 id="hosts" class="text-2xl font-semibold mb-2 text-gray-800 pt-20">Hosts</h2>
-          <div id="shadow" class="max-w-full overflow-x-auto mb-6 rounded-md shadow-sm bg-white">
+          <div class="max-w-full overflow-x-auto mb-6 rounded-md shadow-sm bg-white">
             <table id="table-overview" class="display w-full pt-2">
               <thead>
                 <tr>
