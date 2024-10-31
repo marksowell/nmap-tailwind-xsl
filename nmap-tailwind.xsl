@@ -149,8 +149,7 @@ Licensed under Creative Commons BY-SA 4.0 License
             $('#table-overview tbody').on('click', 'tr', function() {
               servicesTable.search('');
               const ipAddress = $(this).find('td').eq(0).text().trim();
-              servicesTable.columns(0).search(ipAddress).draw();
-              $('#dt-search-1').val(ipAddress);
+              $('#dt-search-1').val(ipAddress).trigger('input');
             });
     
             // Update Services table as the search box value changes, handling partial deletions
@@ -158,7 +157,7 @@ Licensed under Creative Commons BY-SA 4.0 License
               const searchValue = this.value.trim();
               if (searchValue) {
                 // Apply partial match if user types or deletes in search box
-                servicesTable.columns(0).search(searchValue).draw();
+                servicesTable.search(searchValue).draw();
               } else {
                 // Clear filter if search box is completely empty
                 servicesTable.search('').columns().search('').draw();
