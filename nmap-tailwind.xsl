@@ -103,15 +103,16 @@ Licensed under Creative Commons BY-SA 4.0 License
           </div>
         </div>
         <script>
-          // Define custom sorting function for IP addresses
-          jQuery.extend(jQuery.fn.dataTable.ext.type.order, {
-            "ip-address-pre": function (data) {
-              // Convert each octet to a zero-padded integer for proper sorting
-              return data.split('.').map(num => ('000' + num).slice(-3)).join('');
-            }
-          });
+          document.addEventListener("DOMContentLoaded", function() {
 
-          $(document).ready(function() {
+            // Define custom sorting function for IP addresses
+            jQuery.extend(jQuery.fn.dataTable.ext.type.order, {
+              "ip-address-pre": function (data) {
+                return data.split('.').map(num => ('000' + num).slice(-3)).join('');
+              }
+            });
+
+            // Initialize DataTables for both tables
             $('#table-overview, #table-services').DataTable({
               "initComplete": function(settings, json) {
                 $(".dt-layout-row:not(.dt-layout-table)").addClass("px-4");
@@ -122,23 +123,45 @@ Licensed under Creative Commons BY-SA 4.0 License
               ],
               "lengthMenu": [ [10, 25, 50, 100, 1000, -1], [10, 25, 50, 100, 1000, "All"] ]
             });
-          });
-        </script>
-        <script>
-          document.addEventListener("DOMContentLoaded", function() {
+
+            // Dark Mode Toggle
             const toggleButton = document.getElementById("darkModeToggle");
             const icon = document.getElementById("darkModeIcon");
-        
             toggleButton.addEventListener("click", function() {
               document.body.classList.toggle("dark-mode");
               if (document.body.classList.contains("dark-mode")) {
-                icon.classList.replace("fa-moon", "fa-sun"); // Change to sun icon
+                icon.classList.replace("fa-moon", "fa-sun");
                 const shadows = Array.from(document.getElementsByClassName("shadow-sm"));
                 shadows.forEach(element => element.classList.replace("shadow-sm", "shadow-none"));
               } else {
-                icon.classList.replace("fa-sun", "fa-moon"); // Change back to moon icon
+                icon.classList.replace("fa-sun", "fa-moon");
                 const noShadows = Array.from(document.getElementsByClassName("shadow-none"));
                 noShadows.forEach(element => element.classList.replace("shadow-none", "shadow-sm"));
+              }
+            });
+
+            // Add click event listener to each row in the Hosts table for IP filtering
+            const hostsTable = $('#table-overview').DataTable();
+            const servicesTable = $('#table-services').DataTable();
+            $('#table-overview tbody').on('mouseenter', 'tr', function() {
+              $(this).css('cursor', 'pointer');
+            });
+            $('#table-overview tbody').on('click', 'tr', function() {
+              servicesTable.search('');
+              const ipAddress = $(this).find('td').eq(0).text().trim();
+              servicesTable.columns(0).search(ipAddress).draw();
+              $('#dt-search-1').val(ipAddress);
+            });
+    
+            // Update Services table as the search box value changes, handling partial deletions
+            $('#dt-search-1').on('input', function() {
+              const searchValue = this.value.trim();
+              if (searchValue) {
+                // Apply partial match if user types or deletes in search box
+                servicesTable.columns(0).search(searchValue).draw();
+              } else {
+                // Clear filter if search box is completely empty
+                servicesTable.search('').columns().search('').draw();
               }
             });
           });
